@@ -68,6 +68,10 @@ class Veterinaria {
             totalrecaudado += consulta;
             System.out.println(c.descripcion() + " -Precio de la consulta: $" + consulta);
             System.out.println("\n-------------------------------------------");
+
+            cliente[1].setPeso(-3);
+            System.out.println(cliente[1].descripcion());
+
         }
     }
 }
