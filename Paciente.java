@@ -18,7 +18,7 @@ public class Paciente {
     public double getPeso() { return peso; }
 
     void setEdad(int Nuevaedad){
-        if (Nuevaedad <= 0) {
+        if (Nuevaedad < 0) {
             System.out.println("No es posible que su mascota tenga esa edad");
             return;
         }
@@ -26,7 +26,7 @@ public class Paciente {
     }
 
     void setPeso(double Nuevopeso) {
-        if (Nuevopeso < 0) {
+        if (Nuevopeso <= 0) {
             System.out.println("Su mascota está en otro universo?, eso no es posible");
             return;
         }
@@ -46,7 +46,7 @@ public class Paciente {
     }
 
     public String descripcion() {
-        return this.nombre + " (" + this.especie + ", " + this.peso + "kg " + this.edad + " anios";
+        return this.nombre + " (" + this.especie + ", " + this.peso + "kg, " + this.edad + " anios)";
     }
 }
 
@@ -54,8 +54,11 @@ class Veterinaria {
     public static void main(String[] args) {
         Paciente[] cliente = new Paciente[4];
         cliente[0] = new Paciente("Luna ", "Perro ", 28.5, 9);
+
         cliente[1] = new Paciente("Michi ", "Gato ", 4.2, 3);
+
         cliente[2] = new Paciente("Rocky", "Perro ", 12.0, 5);
+
         cliente[3] = new Paciente("Pepa", "Conejo ", 2.1, 1);
 
         int totalrecaudado = 0;
@@ -66,6 +69,5 @@ class Veterinaria {
             System.out.println(c.descripcion() + " -Precio de la consulta: $" + consulta);
             System.out.println("\n-------------------------------------------");
         }
-        System.out.println("Total recaudado: $" + totalrecaudado);
     }
 }
